@@ -1,7 +1,6 @@
 workspace(name = "rules_buildstream")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
-load("@rules_buildstream//buildstream:rules.bzl", "bst_element")
 
 
 local_repository(
@@ -15,9 +14,3 @@ local_repository(
 #    remote = "https://gitlab.com/CodethinkLabs/bazel-resources/bazel-toolchains-fdsdk.git",
 #)
 
-bst_element(
-    name = "fdsdk",
-    build_file = "@bazel_toolchains_fdsdk//:BUILD",
-    repository = "@bazel_toolchains_fdsdk",
-    element = "toolchain-complete-x86_64.bst",
-)
