@@ -1,0 +1,12 @@
+load("//:buildstream.bzl", "bst_element")
+
+filegroup(
+    name = "bst_files",
+    srcs = glob(["elements/**/*", "project.conf", "files/**/*"]),
+    )
+
+bst_element(
+    name = "hello",
+    srcs = ":bst_files",
+    element = "hello.bst",
+)
